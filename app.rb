@@ -25,13 +25,24 @@ get '/pokemons/:id' do
 	erb :"pokemons/show"
 end
 
-get "/pokemons/:id/edit" do
-  @pokemon = Pokemon.find(params[:id])
-  erb(:"pokemons/edit")
-end
-
 post '/pokemons' do
   @pokemon = Pokemon.create(name: params[:name], poke_type: params[:poke_type], cp: params[:cp], img_url: params[:img_url])
   redirect "/pokemons/#{@pokemon.id}"
 end
 
+get '/pokemons/:id/edit' do
+  @pokemon = Pokemon.find(params[:id])
+  erb :"pokemons/edit"
+end
+
+put '/pokemons/:id' do
+  @pokemon = Pokemon.find(params[:id])
+  @pokemon.update(params[:pokemon])
+  redirect("/pokemons/#{@pokemon.id}")
+end
+
+# delete '/artists/:id' do
+#   @artist = Artist.find(params[:id])
+#   @artist.destroy
+#   redirect("/artists")
+# end
