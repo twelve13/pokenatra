@@ -8,7 +8,9 @@
 
 <h3><a href= "<%= "/pokemons/#{@pokemon.id}/edit" %>">Edit This Pokemon</a></h3>
 
+<h2>Delete This Pokemon</h2>
+<form action="/pokemons/<%= @pokemon.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>
 
-
-<!-- /pokemons/:id/edit
- -->
