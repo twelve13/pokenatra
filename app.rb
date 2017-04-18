@@ -1,3 +1,4 @@
+require "pry"
 require 'sinatra'
 require 'sinatra/reloader'
 require 'active_record'
@@ -48,6 +49,7 @@ delete '/pokemons/:id' do
 end
 
 
+
 get '/trainers' do
 	@trainers = Trainer.all
 	erb :"trainers/index"
@@ -82,4 +84,10 @@ delete '/trainers/:id' do
   @trainer = Trainer.find(params[:id])
   @trainer.destroy
   redirect("/trainers")
+end
+
+get '/trainers/:id/pokemons' do
+	@trainer = Trainer.find(params[:id])
+	@pokemons = @trainer.pokemons
+	erb :"trainers/show_pokemon"
 end

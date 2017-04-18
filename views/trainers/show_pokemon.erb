@@ -1,0 +1,6 @@
+
+<% @pokemons.each do |pokemon|%>
+<div class="pokemon">
+		<a href="/pokemons/<%= pokemon.id %>"><%= pokemon.name %></a>
+</div>
+<% end %>

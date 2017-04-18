@@ -1,5 +1,14 @@
 <% @trainers.each do |trainer|%>
-	<p>
+	<div class="pokemon">
 		<a href="/trainers/<%= trainer.id %>"><%= trainer.name %></a>
-	</p>
+	</div>
 <% end %>
+
+<div class="pokemon button">
+<a href='/trainers/new'>Create A New Trainer</a>
+</div>
+
+
+
+
+

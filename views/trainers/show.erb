@@ -1,13 +1,23 @@
-<div>
-<p>Trainer Name: <%= @trainer.name %></p>
-<p>Trainer Level: <%= @trainer.level %></p>
-<p>Trainer Image: </p><img src="<%= @trainer.img_url %>"/>
+<div class="pokemon">
+<div class="center"><img src="<%= @trainer.img_url %>"/></div>
+<p>Name: <%= @trainer.name %></p>
+<p>Level: <%= @trainer.level %></p>
 </div>
 
-<h3><a href= "<%= "/trainers/#{@trainer.id}/edit" %>">Edit This Trainer</a></h3>
+<div class="pokemon button"><a href= "<%= "/trainers/#{@trainer.id}/pokemons" %>">See This Trainers Pokemons</a></div>
 
-<h2>Delete This Trainer</h2>
+<div class="pokemon button"><a href= "<%= "/trainers/#{@trainer.id}/edit" %>">Edit This Trainer</a></div>
+
+<div class="pokemon button">Delete This Trainer
 <form action="/trainers/<%= @trainer.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input class="button-delete" type="submit" value="Delete!">
 </form>
+</div>
+
+
+
+
+
+
+

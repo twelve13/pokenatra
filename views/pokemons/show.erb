@@ -1,16 +1,18 @@
-<!-- <h1><a href="/pokemons">Back to All Pokemons</a></h1> -->
-<div>
-<p>Pokemon Name: <%= @pokemon.name %></p>
-<p>Pokemon Type: <%= @pokemon.poke_type %></p>
-<p>Pokemon Combat Points: <%= @pokemon.cp %></p>
-<p>Pokemon Image: </p><img src="<%= @pokemon.img_url %>"/>
+<div class="pokemon">
+<div class="center"><img src="<%= @pokemon.img_url %>"/></div>
+<p>Name: <%= @pokemon.name %></p>
+<p>Type: <%= @pokemon.poke_type %></p>
+<p>Combat Points: <%= @pokemon.cp %></p>
 </div>
 
-<h3><a href= "<%= "/pokemons/#{@pokemon.id}/edit" %>">Edit This Pokemon</a></h3>
 
-<h2>Delete This Pokemon</h2>
+
+<div class="pokemon button"><a href= "<%= "/pokemons/#{@pokemon.id}/edit" %>">Edit This Pokemon</a></div>
+
+<div class="pokemon button">Delete This Pokemon
 <form action="/pokemons/<%= @pokemon.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input class="button-delete" type="submit" value="Delete!">
 </form>
 
+</div>

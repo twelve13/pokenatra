@@ -1,4 +1,4 @@
-Uncomment for sick pokestyle
+/*Uncomment for sick pokestyle*/
 
 @font-face {
   font-family: "Pokemon";
@@ -49,6 +49,8 @@ a:hover {
   border-left-color: rgba(255, 0, 0, .5);
   border-right-color: rgba(225, 225, 225, .5);
   border-bottom-color: rgba(225, 225, 225, .5);
+  display: flex;
+  justify-content: center
 }
 
 @keyframes pulse {
@@ -69,3 +71,17 @@ a:hover {
     background-color: rgba(0, 0, 0, .1);
   }
 }
+
+.button{
+  background-color: black;
+  color: white;
+}
+
+.center{
+  margin-left: 80px;
+}
+
+.form{
+  margin-top: 100px;
+}
+
