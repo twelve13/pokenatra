@@ -1,0 +1,13 @@
+<div>
+<p>Trainer Name: <%= @trainer.name %></p>
+<p>Trainer Level: <%= @trainer.level %></p>
+<p>Trainer Image: </p><img src="<%= @trainer.img_url %>"/>
+</div>
+
+<h3><a href= "<%= "/trainers/#{@trainer.id}/edit" %>">Edit This Trainer</a></h3>
+
+<h2>Delete This Trainer</h2>
+<form action="/trainers/<%= @trainer.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>

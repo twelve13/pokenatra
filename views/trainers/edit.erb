@@ -1,0 +1,14 @@
+<form action="/trainers/<%= @trainer.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="trainer[name]">Name:</label>
+  <input name="trainer[name]" value="<%= @trainer.name %>">
+
+  <label for="trainer[level]">Trainer Level:</label>
+  <input name="trainer[level]" value="<%= @trainer.level %>">
+
+  <label for="trainer[img_url]">Image URL:</label>
+  <input name="trainer[img_url]" value="<%= @trainer.img_url %>">
+
+  <input type="submit" value="Update">
+</form>
